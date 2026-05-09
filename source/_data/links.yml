@@ -1,6 +1,7 @@
-- group: 我的朋友
-  items:
+- links_category: 我的朋友
+  has_thumbnail: false
+  list:
     - name: 示例朋友
-      url: https://example.com
+      link: https://example.com
       avatar: https://example.com/avatar.png
-      desc: 测试一下
+      description: 测试一下

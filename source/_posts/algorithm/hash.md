@@ -5,8 +5,12 @@ categories:
     - 学习
     - 算法
 tags:
-mathjax: true  <-- 加上这一行
+mathjax: true
 ---
+
+Hash 的两种应用：普通 Hash 快速查数，字符串 Hash 通过多项式映射实现 O(1) 查重。
+
+<!-- more -->
 
 ## 普通Hash：
 

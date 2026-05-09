@@ -2,7 +2,6 @@
 title: hash
 date: 2026-03-01 14:28:07
 categories:
-    - 学习
     - 算法
 tags:
 mathjax: true

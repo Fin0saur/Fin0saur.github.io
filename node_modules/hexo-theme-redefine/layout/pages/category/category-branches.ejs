@@ -1,0 +1,29 @@
+<div class="category-branch-grid">
+  <% nodes.forEach((node) => { %>
+    <article class="category-branch-card">
+      <a class="category-branch-link" href="<%= url_for(node.category.path) %>">
+        <div class="category-branch-topline">
+          <span class="category-branch-level"><%= level === 1 ? '子分类' : `第 ${level + 1} 层` %></span>
+          <span class="category-branch-count"><%= node.category.length %> 篇</span>
+        </div>
+
+        <h3 class="category-branch-name"><%= node.category.name %></h3>
+        <p class="category-branch-path"><%= node.lineage.join(' / ') %></p>
+        <p class="category-branch-latest">
+          <% if (node.latestPost) { %>
+            最近文章：<strong><%= node.latestPost.title %></strong>
+          <% } else { %>
+            暂时还没有文章。
+          <% } %>
+        </p>
+      </a>
+
+      <% if (node.children.length > 0) { %>
+        <div class="category-branch-children">
+          <p class="category-branch-children-title">继续细分</p>
+          <%- partial('pages/category/category-branches', { nodes: node.children, level: level + 1 }) %>
+        </div>
+      <% } %>
+    </article>
+  <% }) %>
+</div>
